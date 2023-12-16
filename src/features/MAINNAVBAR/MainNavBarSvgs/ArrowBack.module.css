@@ -1,0 +1,23 @@
+.svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #fff;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.svg-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.9rem;
+  min-width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  transition: all 0.3sec;
+  margin-right: 4.5rem;
+}
+
+.svg-box:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+}

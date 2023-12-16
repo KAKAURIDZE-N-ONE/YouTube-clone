@@ -1,0 +1,22 @@
+.videos-box {
+  width: 100%;
+  height: auto;
+  background-color: #0f0f0f;
+  display: grid;
+  column-gap: 1.5rem;
+  row-gap: 4rem;
+}
+
+.shortsContainer {
+  position: relative;
+  margin-top: 4.1rem;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+}
+
+.shortsContentBox {
+  margin-top: 2.38rem;
+  display: grid;
+  gap: 1.4rem;
+}

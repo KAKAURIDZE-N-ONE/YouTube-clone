@@ -1,0 +1,11 @@
+.headingOfShorts {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #f1f1f1;
+  margin-left: 0.5rem;
+}
+
+.headingOfShorts h1 {
+  font-weight: 700;
+}

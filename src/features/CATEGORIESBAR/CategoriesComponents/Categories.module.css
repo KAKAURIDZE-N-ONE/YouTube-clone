@@ -1,0 +1,112 @@
+.categories-fixed-box {
+  position: fixed;
+  width: 90%; /* Set the width of the container */
+  overflow-x: auto; /* Enable horizontal scrollbar when content exceeds container width */
+  white-space: nowrap; /* Prevent category items from wrapping */
+  padding-top: 10px;
+  padding-bottom: 7px;
+  top: 4.8rem;
+  left: 9.6rem;
+  scroll-behavior: smooth;
+  padding-top: 2rem;
+  background-color: #0f0f0f;
+  z-index: 1;
+}
+
+.div-for-padding {
+  position: fixed;
+  width: 100%;
+  top: 5rem;
+  padding-top: 3.4rem;
+  padding-bottom: 2.8rem;
+  z-index: 1;
+
+  background-color: #0f0f0f;
+}
+
+.categories-block {
+  background-color: rgba(255, 255, 255, 0.11);
+  display: inline-block;
+  margin-right: 12px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.35s;
+}
+
+.categories-block:last-child {
+  margin-right: 0;
+}
+
+.categories-block:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.203);
+}
+
+.categories-txt {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  margin: auto;
+}
+
+.shadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 6.2rem;
+  fill: #fff;
+  z-index: 100;
+  background-color: #0f0f0f;
+}
+
+.shadowLeft {
+  left: 8rem;
+  padding-right: 2rem;
+  box-shadow: 10px 0 10px 2px #0f0f0f; /* Adjust values as needed */
+}
+
+.shadowRight {
+  right: 1.3rem;
+  padding-left: 2rem;
+  box-shadow: -10px 0 10px 2px #0f0f0f;
+}
+
+.arrow {
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.203);
+}
+
+.categories-fixed-box::-webkit-scrollbar {
+  height: 0px;
+}
+
+.categories-fixed-box::-webkit-scrollbar-track {
+  border-radius: 10px; /* Adjust the radius as needed */
+}
+
+.categories-fixed-box::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px; /* Adjust the radius to match the track */
+}
+
+.categories-fixed-box::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.relative-div-for-arrows {
+  position: relative;
+}

@@ -1,0 +1,22 @@
+.svg-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-left: 7rem;
+  cursor: pointer;
+}
+
+.svg {
+  fill: #fff;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+@media (max-width: 680px) {
+  .svg-box {
+    margin-left: 0;
+  }
+}

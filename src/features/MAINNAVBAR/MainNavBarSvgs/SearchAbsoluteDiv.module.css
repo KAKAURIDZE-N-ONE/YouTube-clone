@@ -1,0 +1,12 @@
+.search-absolute-div {
+  height: 4.2rem;
+  width: 4.5rem;
+  background-color: #121212;
+  border: 1px solid hsl(208, 100%, 41%);
+  border-right: none;
+  position: absolute;
+  left: -3.2rem;
+  border-bottom-left-radius: 1000px;
+  border-top-left-radius: 1000px;
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.svg-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.84rem;
+}
+
+.svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  font-weight: 100;
+  fill: hsl(208, 100%, 56%);
+}
+
+.path {
+  width: 1px;
+  stroke-width: 0.028rem;
+}

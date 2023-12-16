@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3.6rem;
+  width: 36rem;
+  border-radius: 1000px;
+  background-color: #0f0f0f;
+  border: 1px solid rgb(69, 69, 69);
+  transform: translate(-50%, 50%);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(69, 69, 69);
+}
+
+.button h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f1f1f1;
+}

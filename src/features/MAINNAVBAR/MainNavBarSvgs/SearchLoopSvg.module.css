@@ -1,0 +1,11 @@
+.loop {
+  fill: #fff;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.loop-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

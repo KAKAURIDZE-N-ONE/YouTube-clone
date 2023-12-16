@@ -1,0 +1,46 @@
+.main-nav-box {
+  position: fixed;
+  width: 99.98%;
+  top: 0;
+  z-index: 4;
+  background-color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  height: 5.5rem;
+  padding-top: 2.6rem;
+  padding-bottom: 2.4rem;
+}
+
+.cont-1,
+.cont-2,
+.cont-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont-1 {
+  margin-right: 8rem;
+  justify-self: flex-start;
+}
+
+.cont-2 {
+  width: 100%;
+}
+
+.cont-3 {
+  gap: 1rem;
+}
+
+@media (max-width: 680px) {
+  .cont-3 {
+    gap: 0rem;
+  }
+  .cont-2 {
+    width: auto;
+    margin-left: auto;
+  }
+  .cont-1 {
+    margin-right: 6rem;
+  }
+}

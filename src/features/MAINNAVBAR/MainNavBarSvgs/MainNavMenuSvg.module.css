@@ -1,0 +1,32 @@
+.main-nav-svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #fff;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.main-nav-svg-path {
+  stroke-width: 0.028rem;
+}
+
+.main-nav-svg-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.6rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  transition: all 0.3sec;
+}
+
+.main-nav-svg-box:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+}
+
+@media (max-width: 680px) {
+  .main-nav-svg-box {
+    margin-left: 0.9rem;
+  }
+}

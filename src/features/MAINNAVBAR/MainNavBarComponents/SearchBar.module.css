@@ -1,0 +1,147 @@
+.search-bar-box {
+  width: 53.4rem;
+}
+
+:global(.display-none) {
+  display: none !important;
+}
+
+.search-input {
+  display: inline-block;
+  background-color: #121212;
+  padding-left: 1.5rem;
+  height: 4.2rem;
+  border: 0.1px solid #ffffff24;
+  border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  outline: none;
+  width: 53.4rem;
+}
+
+.search-input:focus {
+  border: 1px solid hsl(208, 100%, 41%);
+}
+
+.focusing {
+  position: relative;
+}
+
+.search-loop {
+  height: 4.2rem;
+  min-width: 6.5rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1px solid #ffffff11;
+  border-left: none;
+}
+
+.search-loop:hover {
+  cursor: pointer;
+}
+
+.search-input-loop {
+  position: relative;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.close-button-icon {
+  color: #ffffff;
+}
+
+ion-icon[name='close-outline'] {
+  color: #fff;
+  font-size: 4.2rem;
+  --ionicon-stroke-width: 16px;
+}
+
+ion-icon[name='mic'] {
+  color: #fff;
+  font-size: 2.25rem;
+}
+
+.mic-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.11);
+  margin-left: 1.5rem;
+}
+
+.mic-box:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+  cursor: pointer;
+}
+
+.ion-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: -0.25rem;
+  transform: translate(0, -50%);
+  width: 4.15rem;
+  height: 4.15rem;
+  border-radius: 50%;
+}
+
+.ion-icon-box:hover {
+  background-color: rgba(255, 255, 255, 0.203);
+  cursor: pointer;
+}
+
+.search-loop-focus {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -1.6rem;
+}
+
+@media (max-width: 1170px) {
+  .search-bar-box {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .search-input {
+    background-color: #121212;
+    padding-left: 1.5rem;
+    height: 4.2rem;
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+  }
+  .search-input:focus {
+    border: 1px solid hsl(208, 100%, 41%);
+  }
+}
+
+@media (max-width: 680px) {
+  .search-loop {
+    background-color: #0f0f0f;
+    border: none;
+    min-width: 4.2rem;
+  }
+
+  .mic-box {
+    margin-left: 0;
+    background-color: #0f0f0f;
+  }
+}

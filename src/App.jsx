@@ -23,6 +23,7 @@ import {
   updateVideosArr,
   updateVideosIsLoading,
 } from './features/VIDEOSMAIN/videosMainSlice.js';
+import TwoLineLoading from './features/LoadingComponents/TwoLineLoading.jsx';
 
 function App() {
   const MainNavBar = useSelector(store => store.MainNavBar);
@@ -90,7 +91,14 @@ function App() {
     transition: 'background-color 0.4s',
     left: SideNavBar.miniSideBarIsActive ? '0' : '100%',
   };
-  if (VideosMain.videosIsLoading) return <MainNav />;
+  if (VideosMain.videosIsLoading)
+    return (
+      <>
+        <MainNav />;
+        <TwoLineLoading />
+        <MainContentBox needLoadingMarginTop={true} />
+      </>
+    );
   else
     return (
       <div className={styles['main-container']} style={MAINCONTAINERSTYLE}>

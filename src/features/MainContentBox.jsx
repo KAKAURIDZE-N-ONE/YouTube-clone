@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-function MainContentBox({ children }) {
+function MainContentBox({ children, needLoadingMarginTop }) {
   const MainNavBar = useSelector(store => store.MainNavBar);
   const SideNavBar = useSelector(store => store.SideNavBar);
 
@@ -15,9 +15,10 @@ function MainContentBox({ children }) {
 
   const MAINCCONTENTBOXSTYLE = {
     paddingTop: '12.4rem',
+    marginTop: needLoadingMarginTop && '2rem',
     marginLeft: MARGIN_LEFT_MAIN_CONTENT_BOX,
     marginRight: '2.3rem',
-    backgroundColor: '#0f0f0f',
+    backgroundColor: needLoadingMarginTop ? '#fff' : '#0f0f0f',
   };
   return <div style={MAINCCONTENTBOXSTYLE}>{children}</div>;
 }

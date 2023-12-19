@@ -2,16 +2,12 @@ import MainContentBox from './features/MainContentBox.jsx';
 import PageNotFound from './PageNotFound.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage.jsx';
-import { lazy } from 'react';
 import Subscriptions from './pages/Subscriptions.jsx';
 import You from './pages/You.jsx';
 import History from './pages/History.jsx';
 import Watch from './pages/Watch.jsx';
 import { useSelector } from 'react-redux';
-
-const Videos = lazy(() =>
-  import('./features/VIDEOSMAIN/videosMainComponents/Videos.jsx')
-);
+import Videos from './features/VIDEOSMAIN/videosMainComponents/Videos.jsx';
 
 function App() {
   const VideosMain = useSelector(store => store.VideosMain);

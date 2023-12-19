@@ -20,6 +20,7 @@ import {
   updateVideosArr,
   updateVideosIsLoading,
 } from '../features/VIDEOSMAIN/videosMainSlice.js';
+import { videosArr } from '../videosArr.jsx';
 
 function HomePage({ children }) {
   const MainNavBar = useSelector(store => store.MainNavBar);
@@ -34,10 +35,9 @@ function HomePage({ children }) {
     async function getVideosData() {
       dispatch(updateVideosIsLoading(true));
       await new Promise(resolve => setTimeout(resolve, 2000));
-      const res = await fetch('http://localhost:3000/videos');
-      const data = await res.json();
-      dispatch(updateVideosArr(data[0]));
-      dispatch(updateShortsArr(data[1]));
+
+      dispatch(updateVideosArr(videosArr[0]));
+      dispatch(updateShortsArr(videosArr[1]));
       dispatch(updateVideosIsLoading(false));
     }
 

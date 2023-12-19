@@ -12,6 +12,34 @@ import CurrentAndDurationTime from './CurrentAndDurationTime';
 import DurationOnThePhoto from './DurationOnThePhoto';
 import { Link } from 'react-router-dom';
 
+import video1 from '../videos/video1.mp4';
+import video2 from '../videos/video2.mp4';
+import video3 from '../videos/video3.mp4';
+import video4 from '../videos/video4.mp4';
+import video5 from '../videos/video5.mp4';
+import video6 from '../videos/video6.mp4';
+import video7 from '../videos/video7.mp4';
+import video8 from '../videos/video8.mp4';
+import video9 from '../videos/video9.mp4';
+import video10 from '../videos/video10.mp4';
+import video11 from '../videos/video11.mp4';
+import video12 from '../videos/video12.mp4';
+
+const videosArr = [
+  video1,
+  video2,
+  video3,
+  video4,
+  video5,
+  video6,
+  video7,
+  video8,
+  video9,
+  video10,
+  video11,
+  video12,
+];
+
 const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const dispatch = useDispatch();
   const MainNavBar = useSelector(store => store.MainNavBar);
@@ -246,7 +274,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
           <video
             className="video"
             ref={videoRef}
-            src={elementDetails.videoUrl}
+            src={videosArr[elementDetails.id]}
             style={{ width: '100%' }}
             onTimeUpdate={onTimeUpdate}
             onLoadedMetadata={onLoadedMetadata}

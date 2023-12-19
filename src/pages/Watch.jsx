@@ -3,6 +3,34 @@ import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
+import video1 from '../features/VIDEOSMAIN/videos/video1.mp4';
+import video2 from '../features/VIDEOSMAIN/videos/video2.mp4';
+import video3 from '../features/VIDEOSMAIN/videos/video3.mp4';
+import video4 from '../features/VIDEOSMAIN/videos/video4.mp4';
+import video5 from '../features/VIDEOSMAIN/videos/video5.mp4';
+import video6 from '../features/VIDEOSMAIN/videos/video6.mp4';
+import video7 from '../features/VIDEOSMAIN/videos/video7.mp4';
+import video8 from '../features/VIDEOSMAIN/videos/video8.mp4';
+import video9 from '../features/VIDEOSMAIN/videos/video9.mp4';
+import video10 from '../features/VIDEOSMAIN/videos/video10.mp4';
+import video11 from '../features/VIDEOSMAIN/videos/video11.mp4';
+import video12 from '../features/VIDEOSMAIN/videos/video12.mp4';
+
+const videosArr = [
+  video1,
+  video2,
+  video3,
+  video4,
+  video5,
+  video6,
+  video7,
+  video8,
+  video9,
+  video10,
+  video11,
+  video12,
+];
+
 function Watch() {
   const VideosMain = useSelector(store => store.VideosMain);
   const [videoDetails, setVideoDetails] = useState();
@@ -41,7 +69,7 @@ function Watch() {
               onClick={handleVideoClick}
               ref={videoRef}
               className={`${styles.video} video`}
-              src={videoDetails.videoUrl}
+              src={videosArr[videoDetails.id]}
               autoPlay
               loop
             />

@@ -1,4 +1,4 @@
-export const videosArr = [
+export const videosArray = [
   [
     {
       videoImg:

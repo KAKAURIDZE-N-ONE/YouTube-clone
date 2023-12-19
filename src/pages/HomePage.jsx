@@ -20,7 +20,7 @@ import {
   updateVideosArr,
   updateVideosIsLoading,
 } from '../features/VIDEOSMAIN/videosMainSlice.js';
-import { videosArr } from '../videosArr.jsx';
+import { videosArray } from '../videosArray.jsx';
 
 function HomePage({ children }) {
   const MainNavBar = useSelector(store => store.MainNavBar);
@@ -36,8 +36,8 @@ function HomePage({ children }) {
       dispatch(updateVideosIsLoading(true));
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      dispatch(updateVideosArr(videosArr[0]));
-      dispatch(updateShortsArr(videosArr[1]));
+      dispatch(updateVideosArr(videosArray[0]));
+      dispatch(updateShortsArr(videosArray[1]));
       dispatch(updateVideosIsLoading(false));
     }
 

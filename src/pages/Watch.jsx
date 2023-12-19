@@ -1,5 +1,5 @@
 import styles from './Watch.module.css';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
@@ -30,8 +30,6 @@ const videosArr = [
   video11,
   video12,
 ];
-
-import { videosArr } from '../videosArr';
 
 function Watch() {
   const VideosMain = useSelector(store => store.VideosMain);

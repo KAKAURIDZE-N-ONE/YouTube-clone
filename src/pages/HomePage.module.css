@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #0f0f0f;
+}
+
+.main-container {
+  background-color: #00000036;
+  height: auto;
+  background-color: #0f0f0f;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px; /* Adjust the radius as needed */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px; /* Adjust the radius to match the track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.side-nav-bar-full {
+  position: absolute;
+  transition: left 0.35s;
+  z-index: 2;
+  background-color: #0f0f0f;
+}
+
+.cont-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.85rem;
+}
+
+.flex-div-for-categories-and-main-nav-bar {
+  display: flex;
+}

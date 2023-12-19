@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import styles from './MainNavYoutubeSvg.module.css';
+import { Link } from 'react-router-dom';
 
 function MainNavYoutubeSvg() {
   const VideosMain = useSelector(store => store.VideosMain);
@@ -10,7 +11,7 @@ function MainNavYoutubeSvg() {
   };
 
   return (
-    <div className={styles['main-nav-youtube-svg-box']} style={style}>
+    <Link to={'/'} className={styles['main-nav-youtube-svg-box']} style={style}>
       <h1 className={styles['GE']} style={style}>
         GE
       </h1>
@@ -51,7 +52,7 @@ function MainNavYoutubeSvg() {
           </g>
         </svg>
       </svg>
-    </div>
+    </Link>
   );
 }
 

@@ -10,11 +10,13 @@ const videosArr = [
         'https://i.ytimg.com/vi/xFN8NPL2Xpw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAE1Cy3TpMZnKdQA7B0rGnxySa2OQ',
       pageImg:
         'https://yt3.ggpht.com/QSCDnr5KmYElRp-zYpdW-txkiRo-HYF6Ah1SvMF_7MlspmO1fwYOy7P1jnim8HqezI8IZZKcPQ=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video12.mp4',
       videoName: 'Oppenheimer (2023) - The World Will Remember This Day!',
       pageName: 'Movieclips',
       quantityOfViews: '17K',
       uploadDate: '1 day ago',
       id: 11,
+      subscribers: '60.3M',
     },
 
     {
@@ -22,6 +24,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/VHoT4N43jK8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNxQ2zDuO5QSVq_KQKCj9lpQRsLQ',
       pageImg:
         'https://yt3.ggpht.com/AHmxoY01ABvaJCADNHVH0TmlouX3QNrxeSmjN8Ln_M7u3bV913eBUyyh9zg9YntmpGZPKMSDSjQ=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video9.mp4',
+
       videoName: 'Stromae - Alors on danse (Official Video)',
       pageName: 'Stromae',
       quantityOfViews: '416M',
@@ -34,6 +38,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/ZG-HKX5jmko/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOqAwJYWkpPfnTZUbusFO2JRmY1Q',
       pageImg:
         'https://yt3.ggpht.com/BF1Hu2595RKC7zYGV-y3VvVcBFgYZuVyTYJqykrGEs4Tt_DXfNyfv0LuTAOKClQ2uwHD7j2kxJI=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video4.mp4',
+
       videoName: 'Fast Five: Dream life HD CLIP',
       pageName: 'Kamil Kazimierczak',
       quantityOfViews: '1.5M',
@@ -46,6 +52,7 @@ const videosArr = [
 
       pageImg:
         'https://yt3.ggpht.com/ytc/APkrFKYxWqC-dqZDHtLAhrwjhpwlIIs79dnNg1h6gbfdBg=s68-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video5.mp4',
       videoName: 'სუფრა კახეთში Ft @Octopusi',
       pageName: 'საეჭვო კაცი',
       quantityOfViews: '150K',
@@ -58,6 +65,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/QdBZY2fkU-0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsUIlbe3vsIz8Q1dMp4Jd7EzlHWg',
       pageImg:
         'https://yt3.ggpht.com/r7mISTzNbcLem_plduc_SKMh9KUiP8CWnuhS7H4-CCErF4juXxkrK-5_4LOIMeYl-lXAXMUG=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video6.mp4',
+
       videoName: 'Grand Theft Auto VI Trailer 1',
       pageName: 'Rockstar Games',
       quantityOfViews: '134M',
@@ -70,6 +79,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/5qm8PH4xAss/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASuyULMeWqQRoK_EfTLw4rAIlMKw',
       pageImg:
         'https://yt3.ggpht.com/ytc/APkrFKZy-QRhSq-CCg77oQfSUQV8Nxe40XlH9Eb6J2LsgmI=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video7.mp4',
+
       videoName: '50 Cent - In Da Club (Official Music Video)',
       pageName: '50 Cent',
       quantityOfViews: '1.9B',
@@ -81,6 +92,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/iHuawH_RToQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGBN0EdFGV13TZqENmAHmfZu7csw',
       pageImg:
         'https://yt3.ggpht.com/ytc/APkrFKZqHnNIlD1b7js93FBEoJavzfn8LVuEcHmWj8_SiQ=s68-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video8.mp4',
+
       videoName: 'y yo voy, voy, voy | Alexa Demie',
       pageName: 'i want a sugar daddy',
       quantityOfViews: '14M',
@@ -93,6 +106,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/pbYMReX2ci4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxBv5eYeXryEMhPfyI8XRoVUdNkg',
       pageImg:
         'https://yt3.ggpht.com/rzIEYXjbRwKx_Ix_dHa0XdZh4pSTIf505n5DgdJxmzRKzJT36jqHM86Dmp2l-l7WpIpzcGInMo4=s68-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video10.mp4',
+
       videoName: 'The Fast and The Furious - Tokyo Drift: Welcome to Tokyo',
       pageName: 'Binge Society',
       quantityOfViews: '30M',
@@ -104,6 +119,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/SKg5G2obfO8/hq2.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCA-TF7n3W5H0Y6TdXM1m23cxApLw',
       pageImg:
         'https://yt3.ggpht.com/CfAgdXDALV5i9g4ynP7_eqQkKxFCIHxLEPoG9I_eRHa7gkerwiBUXVsw8_-DZcVGxpRFU0pp=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video3.mp4',
+
       videoName: 'Gisele (Fast & Furious) - Gal Gadot - Danza Kuduro',
       pageName: 'Almu Robbie',
       quantityOfViews: '9.7M',
@@ -115,6 +132,8 @@ const videosArr = [
         'https://i.ytimg.com/vi/pSY3i5XHHXo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDs4GstmNM4RwWWqiGZ7UyE-K5Qew',
       pageImg:
         'https://yt3.ggpht.com/jx6B6Jx83KSpFf5FFl9yf8DcyMHhpgLUSuhRD6s261WivhyFttBMj6rsNtHXRWWpXwtLJf2Jfw=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video11.mp4',
+
       videoName: 'Central Cee x Dave - Sprinter [Music Video]',
       pageName: 'Central Cee',
       quantityOfViews: '156M',
@@ -129,6 +148,8 @@ const videosArr = [
         'https://yt3.ggpht.com/gMlDKFoY6aqvkrKwveXmiAmJMv9I3ovIvsvzGvOLORv-b8xqcsXKP6vdYGuxcq7VJVft0hCgKDo=s88-c-k-c0x00ffffff-no-rj',
       videoName:
         "AZYR - save me to i need your lovin' transition (Boiler Room x Teletech 2023)",
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video2.mp4',
+
       pageName: 'Techno Place',
       quantityOfViews: '86K',
       uploadDate: '2 months ago',
@@ -139,6 +160,7 @@ const videosArr = [
         'https://i.ytimg.com/vi/pIaL0b44sK8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMJZ4E32sFZY2RtFy5oki0e1UvOA',
       pageImg:
         'https://yt3.ggpht.com/YUcpvhXKV4qIk3VQm4tQW9k3OOreJM0CauJO47wf0D-r3qUYACYa7jhtO0iEsf0DOr83q6zkrw=s88-c-k-c0x00ffffff-no-rj',
+      videoUrl: '/src/features/VIDEOSMAIN/videos/video1.mp4',
       videoName:
         'KVARA: რა უთხრა სპალეტიმ ხვიჩას? • პირველი სცენასთან • რეალზე ოცნება დასრულდა?',
       pageName: 'Geo Team • ჯეო თიმი',

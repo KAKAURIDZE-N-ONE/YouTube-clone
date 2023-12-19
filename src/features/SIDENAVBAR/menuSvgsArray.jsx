@@ -21,6 +21,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Home',
+    url: '/',
   },
   {
     svg: (
@@ -42,6 +43,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Shorts',
+    url: '/feed/shorts',
   },
   {
     svg: (
@@ -63,6 +65,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Subscriptions',
+    url: '/feed/subscriptions',
   },
   {
     svg: (
@@ -84,6 +87,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'You',
+    url: '/feed/you',
   },
   {
     svg: (
@@ -107,6 +111,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'History',
+    url: '/feed/history',
   },
   {
     svg: (
@@ -128,6 +133,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Trending',
+    url: '/feed/trending',
   },
   {
     svg: (
@@ -149,6 +155,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Music',
+    url: '/channel',
   },
   {
     svg: (
@@ -170,6 +177,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Gaming',
+    url: '/gaming',
   },
   {
     svg: (
@@ -191,6 +199,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Sports',
+    url: '/channel',
   },
   {
     svg: (
@@ -203,6 +212,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Browse channels',
+    url: '/feed/guide_builder',
   },
   {
     svg: (
@@ -230,6 +240,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'YouTube Kids',
+    url: '/',
   },
   {
     svg: (
@@ -242,6 +253,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Settings',
+    url: '/',
   },
   {
     svg: (
@@ -265,6 +277,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Report history',
+    url: '/',
   },
   {
     svg: (
@@ -277,6 +290,7 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Help',
+    url: '/',
   },
   {
     svg: (
@@ -289,5 +303,6 @@ export const menuSvgsArray = [
       </svg>
     ),
     name: 'Send feedback',
+    url: '/',
   },
 ];

@@ -7,13 +7,10 @@ import ShortsContainerHeading from './ShortsContainerHeading';
 import Short from './Short';
 import ShowMoreButton from './ShowMoreButton';
 import { useSelector } from 'react-redux';
-import {} from '../videosMainSlice';
 
 function Videos() {
   const [isMuted, setIsMuted] = useState(true);
   const VideosMain = useSelector(store => store.VideosMain);
-
-  console.log(VideosMain.videosIsLoading);
 
   const GRID_TEMPLATE_COLUMNS_SHORTS_BOX =
     useCalculateGridTemplateColumnsShortsBox();
@@ -50,6 +47,7 @@ function Videos() {
         )}
       </div>
       <div className={styles.shortsContainer}>
+        VideosMain.videosIsLoading
         <ShortsContainerHeading />
         <div className={styles.shortsContentBox} style={SHORTSCONTENTBOXSTYLE}>
           {VideosMain.shortsArr.map(

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 export const useCalculateGridTemplateColumnsVideosBox = () => {
   const MainNavBar = useSelector(store => store.MainNavBar);
   const SideNavBar = useSelector(store => store.SideNavBar);
-  const [gridTemplateColumns, setGridTemplateColumns] = useState('1fr');
+  const [gridTemplateColumns, setGridTemplateColumns] = useState('');
 
   useEffect(() => {
     if (MainNavBar.windowWidth > 2228 && SideNavBar.mainSideBarIsActive) {

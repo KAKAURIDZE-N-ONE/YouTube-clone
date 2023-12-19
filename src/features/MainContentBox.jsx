@@ -14,7 +14,7 @@ function MainContentBox({ children, needLoadingMarginTop }) {
       : 31;
 
   const MAINCCONTENTBOXSTYLE = {
-    paddingTop: '12.4rem',
+    paddingTop: needLoadingMarginTop ? '0' : '12.4rem',
     marginTop: needLoadingMarginTop && '2rem',
     marginLeft: MARGIN_LEFT_MAIN_CONTENT_BOX,
     marginRight: '2.3rem',

@@ -8,6 +8,7 @@ import {
   isNotHoveringSideNavBar,
   updateActiveMenuElement,
 } from '../SideNavBarSlice';
+import { NavLink } from 'react-router-dom';
 
 const footerWords = [
   'About',
@@ -64,14 +65,19 @@ function SideNavBar({ needNoPadding }) {
 
           if (i <= 2)
             return (
-              <div
+              <NavLink
+                to={el.url}
                 className={styles['side-nav-bar-block']}
+                style={{
+                  textDecoration: 'none',
+                  backgroundColor: isActiveSvg && 'rgba(255,255,255,0.085)',
+                }}
                 key={el.name}
                 onClick={() => handleUpdateMenuActiveElement(el.name)}
               >
                 {isActiveSvg ? el.activeSvg : el.svg}
-                <h1>{el.name}</h1>
-              </div>
+                <h1 style={{ fontWeight: isActiveSvg && '500' }}>{el.name}</h1>
+              </NavLink>
             );
         })}
       </div>
@@ -81,14 +87,19 @@ function SideNavBar({ needNoPadding }) {
 
           if (i <= 4 && i >= 3)
             return (
-              <div
+              <NavLink
+                to={el.url}
                 className={styles['side-nav-bar-block']}
+                style={{
+                  textDecoration: 'none',
+                  backgroundColor: isActiveSvg && 'rgba(255,255,255,0.085)',
+                }}
                 key={el.name}
                 onClick={() => handleUpdateMenuActiveElement(el.name)}
               >
                 {isActiveSvg ? el.activeSvg : el.svg}
-                <h1>{el.name}</h1>
-              </div>
+                <h1 style={{ fontWeight: isActiveSvg && '500' }}>{el.name}</h1>
+              </NavLink>
             );
         })}
       </div>

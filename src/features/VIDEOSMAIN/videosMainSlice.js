@@ -23,6 +23,9 @@ const VideosMainSlice = createSlice({
     updateShortsArr(state, action) {
       state.shortsArr = action.payload;
     },
+    updateVideosVideos(state, action) {
+      state.videosVideos = action.payload;
+    },
   },
 });
 
@@ -31,6 +34,7 @@ export const {
   updateVideosIsLoading,
   updateVideosArr,
   updateShortsArr,
+  updateVideosVideos,
 } = VideosMainSlice.actions;
 
 export default VideosMainSlice.reducer;

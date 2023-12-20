@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   videoAndPhotoContainerWidth: 0,
+  videoAndPhotoContainerHeight: 0,
   videosIsLoading: false,
   videosArr: [],
   shortsArr: [],
@@ -14,6 +15,10 @@ const VideosMainSlice = createSlice({
     updateVideoAndPhotoContainerWidth(state, action) {
       state.videoAndPhotoContainerWidth = action.payload;
     },
+    updateVideoAndPhotoContainerHeight(state, action) {
+      state.videoAndPhotoContainerHeight = action.payload;
+    },
+
     updateVideosIsLoading(state, action) {
       state.videosIsLoading = action.payload;
     },
@@ -31,6 +36,7 @@ const VideosMainSlice = createSlice({
 
 export const {
   updateVideoAndPhotoContainerWidth,
+  updateVideoAndPhotoContainerHeight,
   updateVideosIsLoading,
   updateVideosArr,
   updateShortsArr,

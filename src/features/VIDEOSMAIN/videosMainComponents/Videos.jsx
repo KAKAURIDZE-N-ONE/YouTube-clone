@@ -46,19 +46,24 @@ function Videos() {
             )
         )}
       </div>
-      <div className={styles.shortsContainer}>
-        VideosMain.videosIsLoading
-        <ShortsContainerHeading />
-        <div className={styles.shortsContentBox} style={SHORTSCONTENTBOXSTYLE}>
-          {VideosMain.shortsArr.map(
-            (el, i) =>
-              i < quantityOfFirst1ColShorts && (
-                <Short el={el} key={el.shortImg} />
-              )
-          )}
+      {VideosMain.videoAndPhotoContainerHeight > 0 && (
+        <div className={styles.shortsContainer}>
+          VideosMain.videosIsLoading
+          <ShortsContainerHeading />
+          <div
+            className={styles.shortsContentBox}
+            style={SHORTSCONTENTBOXSTYLE}
+          >
+            {VideosMain.shortsArr.map(
+              (el, i) =>
+                i < quantityOfFirst1ColShorts && (
+                  <Short el={el} key={el.shortImg} />
+                )
+            )}
+          </div>
+          <ShowMoreButton />
         </div>
-        <ShowMoreButton />
-      </div>
+      )}
       <div
         className={styles['videos-box']}
         style={{ ...VIDEOSBOXSTYLE, paddingBottom: '4rem' }}

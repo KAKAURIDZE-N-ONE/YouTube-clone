@@ -3,7 +3,10 @@ import styles from './Video.module.css';
 import { memo, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCalculateGridTemplateColumnsVideosBox } from '../../../hooks/useCalculateGridTemplateColumnsVideosBox';
-import { updateVideoAndPhotoContainerWidth } from '../videosMainSlice';
+import {
+  updateVideoAndPhotoContainerHeight,
+  updateVideoAndPhotoContainerWidth,
+} from '../videosMainSlice';
 import VoiceButtonBox from './VoiceButtonBox';
 import LineBetweenVoiceAndSubtitles from './LineBetweenVoiceAndSubtitles';
 import SubtitlesButtonBox from './SubtitlesButtonBox';
@@ -66,6 +69,11 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
         dispatch(
           updateVideoAndPhotoContainerWidth(
             videoAndPhotoContainerRef.current.clientWidth
+          )
+        );
+        dispatch(
+          updateVideoAndPhotoContainerHeight(
+            videoAndPhotoContainerRef.current.clientHeight
           )
         );
       }
@@ -298,36 +306,37 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
           </Link>
         </div>
       </div>
-
-      <div
-        className={styles.videoDescription}
-        style={{
-          boxShadow:
-            photoAndVideoBoxIsHovering &&
-            readyToChange &&
-            '10px -60px 10px 20px rgba(0, 0, 0, 0.214)',
-        }}
-      >
-        <img
-          className={styles.pageImg}
-          src={elementDetails.pageImg}
-          alt="page image"
-        />
-        <div>
-          <h1 className={styles.videoName}>{elementDetails.videoName}</h1>
-          <h1 className={styles.pageName}>{elementDetails.pageName}</h1>
-          <div className={styles.viewsAndTime}>
-            <h1 className={styles.pageName}>
-              {elementDetails.quantityOfViews} views
-            </h1>
-            <div className={styles.videoDescriptionDot}></div>
-            <h1 className={styles.pageName}>{elementDetails.uploadDate}</h1>
+      {VideosMain.videoAndPhotoContainerWidth > 0 && (
+        <div
+          className={styles.videoDescription}
+          style={{
+            boxShadow:
+              photoAndVideoBoxIsHovering &&
+              readyToChange &&
+              '10px -60px 10px 20px rgba(0, 0, 0, 0.214)',
+          }}
+        >
+          <img
+            className={styles.pageImg}
+            src={elementDetails.pageImg}
+            alt="page image"
+          />
+          <div>
+            <h1 className={styles.videoName}>{elementDetails.videoName}</h1>
+            <h1 className={styles.pageName}>{elementDetails.pageName}</h1>
+            <div className={styles.viewsAndTime}>
+              <h1 className={styles.pageName}>
+                {elementDetails.quantityOfViews} views
+              </h1>
+              <div className={styles.videoDescriptionDot}></div>
+              <h1 className={styles.pageName}>{elementDetails.uploadDate}</h1>
+            </div>
           </div>
+          {videoBoxIsHovering && !photoAndVideoBoxIsHovering && (
+            <SettingDotsForVideo />
+          )}
         </div>
-        {videoBoxIsHovering && !photoAndVideoBoxIsHovering && (
-          <SettingDotsForVideo />
-        )}
-      </div>
+      )}
     </Link>
   );
 });

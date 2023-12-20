@@ -259,7 +259,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
         onMouseEnter={handleMouseEnterPhotoAndVideo}
         onMouseLeave={handleMouseLeavePhotoAndVideo}
       >
-        {videoBoxIsHovering && (
+        {videoBoxIsHovering && videoImageIsLoaded && (
           <div style={VIDEOFULLCONTAINERSTYLE}>
             {!inputRangeIsHovering && photoAndVideoBoxIsHovering && (
               <CurrentAndDurationTime

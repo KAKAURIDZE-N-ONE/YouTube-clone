@@ -46,7 +46,7 @@ function Videos() {
             )
         )}
       </div>
-      {VideosMain.videoAndPhotoContainerHeight > 0 && (
+      {VideosMain.videoAndPhotoContainerHeigh && (
         <div className={styles.shortsContainer}>
           VideosMain.videosIsLoading
           <ShortsContainerHeading />

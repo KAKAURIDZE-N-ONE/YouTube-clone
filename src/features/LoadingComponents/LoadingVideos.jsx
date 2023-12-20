@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useCalculateGridTemplateColumnsVideosBox } from '../../hooks/useCalculateGridTemplateColumnsVideosBox';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  updateVideoAndPhotoContainerHeight,
+  updateVideoAndPhotoContainerWidth,
+} from '../VIDEOSMAIN/videosMainSlice';
 
 function LoadingVideos() {
   const MainNavBar = useSelector(store => store.MainNavBar);
@@ -8,6 +12,32 @@ function LoadingVideos() {
   const videoAndPhotoContainerRef = useRef(null);
   const [videoAndPhotoContainerWidth, setVideoAndPhotoContainerWidth] =
     useState(0);
+
+  const gridTemplateCols = useCalculateGridTemplateColumnsVideosBox();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (videoAndPhotoContainerRef.current) {
+        dispatch(
+          updateVideoAndPhotoContainerWidth(
+            videoAndPhotoContainerRef.current.clientWidth
+          )
+        );
+        dispatch(
+          updateVideoAndPhotoContainerHeight(
+            videoAndPhotoContainerRef.current.clientHeight
+          )
+        );
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [MainNavBar.windowWidth, gridTemplateCols, dispatch]);
+  ///to read width of p
 
   const gridTemplateColumns = useCalculateGridTemplateColumnsVideosBox();
 

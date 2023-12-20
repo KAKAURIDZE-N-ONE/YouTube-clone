@@ -3,6 +3,7 @@
   margin: 0 auto;
   background-color: #0f0f0f;
   cursor: pointer;
+  position: relative;
 }
 
 .videoImg {
@@ -35,6 +36,12 @@
 
 .pageName:nth-child(2):hover {
   color: #f1f1f1;
+}
+
+.pageImgBox {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
 }
 
 .pageImg {

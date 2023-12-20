@@ -56,6 +56,8 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [readyToChange, setReadyToChange] = useState(false);
+  const [pageImgIsLoaded, setPageImgIsLoaded] = useState(false);
+  const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
   const videoAndPhotoContainerRef = useRef(null);
   const videoRef = useRef(null);
@@ -101,7 +103,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
 
   useEffect(() => {
     if (!videoBoxIsHovering) setReadyToChange(false);
-    else {
+    else if (videoIsLoaded) {
       const playVideo = () => {
         setReadyToChange(true);
       };
@@ -110,11 +112,19 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
 
       return () => clearTimeout(timeout);
     }
-  }, [videoBoxIsHovering, dispatch]);
+  }, [videoBoxIsHovering, dispatch, videoIsLoaded]);
 
   //video time controller
   function onTimeUpdate() {
     setCurrentTime(videoRef.current.currentTime);
+  }
+
+  function handlePageImgLoad() {
+    setPageImgIsLoaded(true);
+  }
+
+  function handleVideoLoad() {
+    setVideoIsLoaded(true);
   }
 
   const onSliderChange = e => {
@@ -286,6 +296,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
             style={{ width: '100%' }}
             onTimeUpdate={onTimeUpdate}
             onLoadedMetadata={onLoadedMetadata}
+            onLoadedData={handleVideoLoad}
             loop
             muted={isMuted ? true : false}
           />
@@ -316,11 +327,17 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
               '10px -60px 10px 20px rgba(0, 0, 0, 0.214)',
           }}
         >
-          <img
-            className={styles.pageImg}
-            src={elementDetails.pageImg}
-            alt="page image"
-          />
+          <div
+            className={styles.pageImgBox}
+            style={{ backgroundColor: !pageImgIsLoaded && '#a1a1a1' }}
+          >
+            <img
+              className={styles.pageImg}
+              onLoad={handlePageImgLoad}
+              src={elementDetails.pageImg}
+              alt="page image"
+            />
+          </div>
           <div>
             <h1 className={styles.videoName}>{elementDetails.videoName}</h1>
             <h1 className={styles.pageName}>{elementDetails.pageName}</h1>

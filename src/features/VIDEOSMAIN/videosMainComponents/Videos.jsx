@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 function Videos() {
   const [isMuted, setIsMuted] = useState(true);
   const VideosMain = useSelector(store => store.VideosMain);
+  const [pageImgIsLoaded, setPageImgIsLoaded] = useState(false);
 
   const GRID_TEMPLATE_COLUMNS_SHORTS_BOX =
     useCalculateGridTemplateColumnsShortsBox();
@@ -42,11 +43,13 @@ function Videos() {
                 elementDetails={el}
                 isMuted={isMuted}
                 setIsMuted={setIsMuted}
+                pageImgIsLoaded={pageImgIsLoaded}
+                setPageImgIsLoaded={setPageImgIsLoaded}
               />
             )
         )}
       </div>
-      {VideosMain.videoAndPhotoContainerHeigh && (
+      {pageImgIsLoaded && (
         <div className={styles.shortsContainer}>
           VideosMain.videosIsLoading
           <ShortsContainerHeading />

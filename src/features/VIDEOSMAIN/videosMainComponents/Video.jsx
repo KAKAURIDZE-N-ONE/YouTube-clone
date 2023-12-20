@@ -43,7 +43,13 @@ const videosArr = [
   video12,
 ];
 
-const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
+const Video = memo(function Video({
+  elementDetails,
+  isMuted,
+  setIsMuted,
+  pageImgIsLoaded,
+  setPageImgIsLoaded,
+}) {
   const dispatch = useDispatch();
   const MainNavBar = useSelector(store => store.MainNavBar);
   const VideosMain = useSelector(store => store.VideosMain);
@@ -56,7 +62,6 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [readyToChange, setReadyToChange] = useState(false);
-  const [pageImgIsLoaded, setPageImgIsLoaded] = useState(false);
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
   const videoAndPhotoContainerRef = useRef(null);

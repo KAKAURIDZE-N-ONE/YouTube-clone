@@ -13,19 +13,18 @@ export const videosArray = [
       id: 11,
       subscribers: '60.3M',
     },
-
     {
       videoImg:
-        'https://i.ytimg.com/vi/VHoT4N43jK8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNxQ2zDuO5QSVq_KQKCj9lpQRsLQ',
+        'https://i.ytimg.com/vi/_x9jYEYO9Bg/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhlIGUoZTAP&rs=AOn4CLBQB8ntHzZpfa-8wZxgYhmMBAtdDQ',
       pageImg:
-        'https://yt3.ggpht.com/AHmxoY01ABvaJCADNHVH0TmlouX3QNrxeSmjN8Ln_M7u3bV913eBUyyh9zg9YntmpGZPKMSDSjQ=s88-c-k-c0x00ffffff-no-rj',
-      videoUrl: '/src/features/VIDEOSMAIN/videos/video9.mp4',
+        'https://yt3.ggpht.com/ytc/AIf8zZRKY64uWRglxABzko411fiQIEPoFykBGXdTKrqrnQ=s88-c-k-c0x00ffffff-no-rj',
 
-      videoName: 'Stromae - Alors on danse (Official Video)',
-      pageName: 'Stromae',
-      quantityOfViews: '416M',
-      uploadDate: '13 years ago',
+      videoName: 'Amr Diab - habibi ya nour el ein ( El Clone)',
+      pageName: 'Ynain Amorim',
+      quantityOfViews: '22M',
+      uploadDate: '7 years ago',
       id: 8,
+      subscribers: '39.4K',
     },
 
     {

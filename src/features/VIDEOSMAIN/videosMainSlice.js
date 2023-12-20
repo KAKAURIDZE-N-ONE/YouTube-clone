@@ -6,6 +6,7 @@ const initialState = {
   videosIsLoading: false,
   videosArr: [],
   shortsArr: [],
+  pageImagesIsLoaded: false,
 };
 
 const VideosMainSlice = createSlice({
@@ -31,6 +32,9 @@ const VideosMainSlice = createSlice({
     updateVideosVideos(state, action) {
       state.videosVideos = action.payload;
     },
+    pageImagesIsLoaded(state) {
+      state.pageImagesIsLoaded = true;
+    },
   },
 });
 
@@ -41,6 +45,7 @@ export const {
   updateVideosArr,
   updateShortsArr,
   updateVideosVideos,
+  pageImagesIsLoaded,
 } = VideosMainSlice.actions;
 
 export default VideosMainSlice.reducer;

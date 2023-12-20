@@ -4,6 +4,7 @@ import { memo, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCalculateGridTemplateColumnsVideosBox } from '../../../hooks/useCalculateGridTemplateColumnsVideosBox';
 import {
+  pageImagesIsLoaded,
   updateVideoAndPhotoContainerHeight,
   updateVideoAndPhotoContainerWidth,
 } from '../videosMainSlice';
@@ -43,13 +44,7 @@ const videosArr = [
   video12,
 ];
 
-const Video = memo(function Video({
-  elementDetails,
-  isMuted,
-  setIsMuted,
-  pageImgIsLoaded,
-  setPageImgIsLoaded,
-}) {
+const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const dispatch = useDispatch();
   const MainNavBar = useSelector(store => store.MainNavBar);
   const VideosMain = useSelector(store => store.VideosMain);
@@ -125,7 +120,7 @@ const Video = memo(function Video({
   }
 
   function handlePageImgLoad() {
-    setPageImgIsLoaded(true);
+    dispatch(pageImagesIsLoaded());
   }
 
   function handleVideoLoad() {
@@ -241,6 +236,8 @@ const Video = memo(function Video({
     position: 'absolute',
   };
 
+  console.log(videoBoxIsHovering, readyToChange);
+
   return (
     <Link
       onClick={e => {
@@ -267,45 +264,47 @@ const Video = memo(function Video({
             zIndex: videoBoxIsHovering && readyToChange ? '-3' : '13',
           }}
         ></div>
-        <div style={VIDEOFULLCONTAINERSTYLE}>
-          {!inputRangeIsHovering && photoAndVideoBoxIsHovering && (
-            <CurrentAndDurationTime
-              inputRangeIsHovering={inputRangeIsHovering}
-              duration={duration}
-              currentTime={currentTime}
-              videoBoxIsHovering={videoBoxIsHovering}
+        {videoBoxIsHovering && (
+          <div style={VIDEOFULLCONTAINERSTYLE}>
+            {!inputRangeIsHovering && photoAndVideoBoxIsHovering && (
+              <CurrentAndDurationTime
+                inputRangeIsHovering={inputRangeIsHovering}
+                duration={duration}
+                currentTime={currentTime}
+                videoBoxIsHovering={videoBoxIsHovering}
+              />
+            )}
+            <input
+              type="range"
+              style={INPUTRANGESTYLE}
+              className={styles.videoTimeControllerInput}
+              min={0}
+              max={duration}
+              step={0.1}
+              value={currentTime}
+              onChange={onSliderChange}
+              onMouseEnter={handleMouseEnterInputRange}
+              onMouseLeave={handleMouseLeaveInputRange}
+              onMouseMove={handleMouseMoveInputRange}
             />
-          )}
-          <input
-            type="range"
-            style={INPUTRANGESTYLE}
-            className={styles.videoTimeControllerInput}
-            min={0}
-            max={duration}
-            step={0.1}
-            value={currentTime}
-            onChange={onSliderChange}
-            onMouseEnter={handleMouseEnterInputRange}
-            onMouseLeave={handleMouseLeaveInputRange}
-            onMouseMove={handleMouseMoveInputRange}
-          />
-          <div className={styles.soundAndSubtitlesControl}>
-            <VoiceButtonBox toggleMute={toggleMute} isMuted={isMuted} />
-            <LineBetweenVoiceAndSubtitles />
-            <SubtitlesButtonBox />
+            <div className={styles.soundAndSubtitlesControl}>
+              <VoiceButtonBox toggleMute={toggleMute} isMuted={isMuted} />
+              <LineBetweenVoiceAndSubtitles />
+              <SubtitlesButtonBox />
+            </div>
+            <video
+              className="video"
+              ref={videoRef}
+              src={videosArr[elementDetails.id]}
+              style={{ width: '100%' }}
+              onTimeUpdate={onTimeUpdate}
+              onLoadedMetadata={onLoadedMetadata}
+              onLoadedData={handleVideoLoad}
+              loop
+              muted={isMuted ? true : false}
+            />
           </div>
-          <video
-            className="video"
-            ref={videoRef}
-            src={videosArr[elementDetails.id]}
-            style={{ width: '100%' }}
-            onTimeUpdate={onTimeUpdate}
-            onLoadedMetadata={onLoadedMetadata}
-            onLoadedData={handleVideoLoad}
-            loop
-            muted={isMuted ? true : false}
-          />
-        </div>
+        )}
         <div style={IMGFULLCONTAINERSTYLE}>
           <DurationOnThePhoto
             duration={duration}
@@ -334,7 +333,9 @@ const Video = memo(function Video({
         >
           <div
             className={styles.pageImgBox}
-            style={{ backgroundColor: !pageImgIsLoaded && '#a1a1a1' }}
+            style={{
+              backgroundColor: !VideosMain.pageImagesIsLoaded && '#a1a1a1',
+            }}
           >
             <img
               className={styles.pageImg}
@@ -378,6 +379,8 @@ Video.propTypes = {
   }),
   isMuted: PropTypes.bool,
   setIsMuted: PropTypes.func,
+  pageImgIsLoaded: PropTypes.bool,
+  setPageImgIsLoaded: PropTypes.func,
 };
 
 export default Video;

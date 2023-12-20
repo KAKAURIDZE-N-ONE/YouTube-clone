@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-function DurationOnThePhoto({ duration, videoBoxIsHovering }) {
+function DurationOnThePhoto({ durationOfVideo, videoBoxIsHovering }) {
   const VideosMain = useSelector(store => store.VideosMain);
 
-  const durationSec = Math.floor(duration % 60);
-  const durationMin = Math.floor(duration / 60);
+  const durationSec = Math.floor(durationOfVideo % 60);
+  const durationMin = Math.floor(durationOfVideo / 60);
   const durationHour = Math.floor(durationMin / 60);
   return (
     <div
@@ -31,7 +31,7 @@ function DurationOnThePhoto({ duration, videoBoxIsHovering }) {
 }
 
 DurationOnThePhoto.propTypes = {
-  duration: PropTypes.number,
+  durationOfVideo: PropTypes.number,
   videoBoxIsHovering: PropTypes.bool,
 };
 

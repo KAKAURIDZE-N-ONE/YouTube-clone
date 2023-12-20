@@ -2,7 +2,7 @@ import styles from './Videos.module.css';
 import Video from './Video';
 import { useCalculateGridTemplateColumnsShortsBox } from '../../../hooks/useCalculateGridTemplateColumnsShortsBox';
 import { useCalculateGridTemplateColumnsVideosBox } from '../../../hooks/useCalculateGridTemplateColumnsVideosBox';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ShortsContainerHeading from './ShortsContainerHeading';
 import Short from './Short';
 import ShowMoreButton from './ShowMoreButton';
@@ -12,6 +12,10 @@ function Videos() {
   const [isMuted, setIsMuted] = useState(true);
   const VideosMain = useSelector(store => store.VideosMain);
   const [pageImgIsLoaded, setPageImgIsLoaded] = useState(false);
+
+  useEffect(() => {
+    document.title = 'YouTube';
+  }, []);
 
   const GRID_TEMPLATE_COLUMNS_SHORTS_BOX =
     useCalculateGridTemplateColumnsShortsBox();

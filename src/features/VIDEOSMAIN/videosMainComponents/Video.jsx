@@ -58,6 +58,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [readyToChange, setReadyToChange] = useState(false);
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
+  const [videoImageIsLoaded, setVideoImageIsLoaded] = useState(false);
 
   const videoAndPhotoContainerRef = useRef(null);
   const videoRef = useRef(null);
@@ -125,6 +126,10 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
 
   function handleVideoLoad() {
     setVideoIsLoaded(true);
+  }
+
+  function handleVideoImageLoad() {
+    setVideoImageIsLoaded(true);
   }
 
   const onSliderChange = e => {
@@ -216,6 +221,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     borderRadius: videoBoxIsHovering ? '0' : '12px',
     transition: videoBoxIsHovering && 'border-radius 0.15s',
     overflow: !readyToChange && 'hidden',
+    backgroundColor: !videoImageIsLoaded && 'rgba(255,255,255,0.2)',
   };
 
   const watchedPercentage = (currentTime / duration) * 100;
@@ -236,8 +242,6 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     position: 'absolute',
   };
 
-  console.log(videoBoxIsHovering, readyToChange);
-
   return (
     <Link
       onClick={e => {
@@ -255,15 +259,6 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
         onMouseEnter={handleMouseEnterPhotoAndVideo}
         onMouseLeave={handleMouseLeavePhotoAndVideo}
       >
-        <div
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#0f0f0f',
-            zIndex: videoBoxIsHovering && readyToChange ? '-3' : '13',
-          }}
-        ></div>
         {videoBoxIsHovering && (
           <div style={VIDEOFULLCONTAINERSTYLE}>
             {!inputRangeIsHovering && photoAndVideoBoxIsHovering && (
@@ -307,11 +302,12 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
         )}
         <div style={IMGFULLCONTAINERSTYLE}>
           <DurationOnThePhoto
-            duration={duration}
+            durationOfVideo={elementDetails.duration}
             videoBoxIsHovering={videoBoxIsHovering}
           />
           <Link to={`/watch?v=${elementDetails.id}`}>
             <img
+              onLoad={handleVideoImageLoad}
               id="ImageId"
               className={styles.videoImg}
               src={elementDetails.videoImg}
@@ -334,7 +330,8 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
           <div
             className={styles.pageImgBox}
             style={{
-              backgroundColor: !VideosMain.pageImagesIsLoaded && '#a1a1a1',
+              backgroundColor:
+                !VideosMain.pageImagesIsLoaded && 'rgba(255,255,255,0.2)',
             }}
           >
             <img
@@ -376,6 +373,7 @@ Video.propTypes = {
     videoUrl: PropTypes.string,
     videoId: PropTypes.string,
     id: PropTypes.number,
+    duration: PropTypes.number,
   }),
   isMuted: PropTypes.bool,
   setIsMuted: PropTypes.func,

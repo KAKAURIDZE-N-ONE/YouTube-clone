@@ -40,6 +40,10 @@ function Watch() {
   const videoRef = useRef(null);
   const videoBoxRef = useRef(null);
 
+  useEffect(() => {
+    if (videoDetails) document.title = videoDetails.videoName;
+  }, [videoDetails]);
+
   useEffect(
     function () {
       if (!VideosMain.videosIsLoading) {

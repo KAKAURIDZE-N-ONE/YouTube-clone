@@ -12,6 +12,7 @@ export const videosArray = [
       uploadDate: '1 day ago',
       id: 11,
       subscribers: '60.3M',
+      duration: 186,
     },
     {
       videoImg:
@@ -25,6 +26,7 @@ export const videosArray = [
       uploadDate: '7 years ago',
       id: 8,
       subscribers: '39.4K',
+      duration: 259,
     },
 
     {
@@ -39,6 +41,7 @@ export const videosArray = [
       quantityOfViews: '1.5M',
       uploadDate: '6 years ago',
       id: 3,
+      duration: 231,
     },
     {
       videoImg:
@@ -52,6 +55,7 @@ export const videosArray = [
       quantityOfViews: '150K',
       uploadDate: '3 months ago',
       id: 4,
+      duration: 1911,
     },
 
     {
@@ -66,6 +70,7 @@ export const videosArray = [
       quantityOfViews: '134M',
       uploadDate: '4 days ago',
       id: 5,
+      duration: 90,
     },
 
     {
@@ -80,6 +85,7 @@ export const videosArray = [
       quantityOfViews: '1.9B',
       uploadDate: '14 years ago',
       id: 6,
+      duration: 247,
     },
     {
       videoImg:
@@ -93,6 +99,7 @@ export const videosArray = [
       quantityOfViews: '14M',
       uploadDate: '2 years ago',
       id: 7,
+      duration: 111,
     },
 
     {
@@ -107,6 +114,7 @@ export const videosArray = [
       quantityOfViews: '30M',
       uploadDate: '3 years ago',
       id: 9,
+      duration: 311,
     },
     {
       videoImg:
@@ -120,6 +128,7 @@ export const videosArray = [
       quantityOfViews: '9.7M',
       uploadDate: '5 years ago',
       id: 2,
+      duration: 303,
     },
     {
       videoImg:
@@ -133,6 +142,7 @@ export const videosArray = [
       quantityOfViews: '156M',
       uploadDate: '6 months ago',
       id: 10,
+      duration: 229,
     },
 
     {
@@ -148,6 +158,7 @@ export const videosArray = [
       quantityOfViews: '86K',
       uploadDate: '2 months ago',
       id: 1,
+      duration: 464,
     },
     {
       videoImg:
@@ -161,6 +172,7 @@ export const videosArray = [
       quantityOfViews: '110k',
       uploadDate: '3 days ago',
       id: 0,
+      duration: 1176,
     },
   ],
   [

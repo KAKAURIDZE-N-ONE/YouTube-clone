@@ -59,11 +59,29 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const [readyToChange, setReadyToChange] = useState(false);
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
   const [videoImageIsLoaded, setVideoImageIsLoaded] = useState(false);
+  const [videoDistanceFromBottom, setVideoDistanceFromBottom] = useState(0);
 
   const videoAndPhotoContainerRef = useRef(null);
   const videoRef = useRef(null);
 
   const gridTemplateCols = useCalculateGridTemplateColumnsVideosBox();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (videoAndPhotoContainerRef.current) {
+        const rect = videoAndPhotoContainerRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const distanceFromBottom = windowHeight - rect.top;
+        setVideoDistanceFromBottom(distanceFromBottom);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call initially to set the distance on load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   ///to read width of photo and video container after page has arrive
   useEffect(() => {
@@ -310,7 +328,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
               onLoad={handleVideoImageLoad}
               id="ImageId"
               className={styles.videoImg}
-              src={elementDetails.videoImg}
+              src={videoDistanceFromBottom > 0 ? elementDetails.videoImg : ''}
               alt="video image"
               style={VIDEOIMGSTYLE}
             />

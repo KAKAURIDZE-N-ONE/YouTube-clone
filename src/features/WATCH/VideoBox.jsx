@@ -30,8 +30,9 @@ function VideoBox({ children }) {
     margin: '0 auto',
     marginTop: '7.7rem',
     height: `${Watch.videoBoxWidth / 1.7777}px`,
-    backgroundColor: !Watch.videoIsLoaded && 'black ',
+    backgroundColor: !Watch.videoIsLoaded && '#000',
     borderRadius: '12px',
+    zIndex: '3',
   };
 
   return (

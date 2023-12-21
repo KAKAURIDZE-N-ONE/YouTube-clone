@@ -211,7 +211,6 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   function handleMouseLeaveContentElementBox() {
     setVideoBoxIsHovering(false);
     pauseVideo();
-    videoRef.current.currentTime = 0; // Resetting video to start
   }
 
   function handleMouseEnterInputRange() {
@@ -323,7 +322,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
             durationOfVideo={elementDetails.duration}
             videoBoxIsHovering={videoBoxIsHovering}
           />
-          <Link to={`/watch?v=${elementDetails.id}`}>
+          <div>
             <img
               onLoad={handleVideoImageLoad}
               id="ImageId"
@@ -332,7 +331,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
               alt="video image"
               style={VIDEOIMGSTYLE}
             />
-          </Link>
+          </div>
         </div>
       </div>
       {VideosMain.videoAndPhotoContainerWidth > 0 && (

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './HomePage.module.css';
 import MainNav from '../features/MAINNAVBAR/MainNavBarComponents/MainNav';
 import MiniSideNavBar from '../features/SIDENAVBAR/SideNavBarComponents/MiniSideNavBar';
@@ -164,5 +165,9 @@ function HomePage({ children }) {
       </div>
     );
 }
+
+HomePage.propTypes = {
+  children: PropTypes.node,
+};
 
 export default HomePage;

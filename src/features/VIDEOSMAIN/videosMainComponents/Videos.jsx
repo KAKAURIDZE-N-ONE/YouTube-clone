@@ -36,7 +36,6 @@ function Videos() {
     gridTemplateColumns: GRID_TEMPLATE_COLUMNS_SHORTS_BOX,
   };
 
-  console.log(VideosMain.pageImgIsLoaded);
   return (
     <>
       <div className={styles['videos-box']} style={VIDEOSBOXSTYLE}>

@@ -11,8 +11,6 @@ function Short({ el }) {
   const gridTemplateCols = useCalculateGridTemplateColumnsShortsBox();
   const shortImageAndVideoBoxRef = useRef(null);
 
-  console.log(shortDistanceFromBottom);
-
   useEffect(
     function () {
       const handleResize = () => {

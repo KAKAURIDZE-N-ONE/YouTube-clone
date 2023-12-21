@@ -24,13 +24,15 @@ function Categories() {
 
   Categories.horizontalScrollBarIsHovering ||
   SideNavBar.isHoveringSideNavBar ||
-  VideosMain.videosIsLoading
+  VideosMain.videosIsLoading ||
+  SideNavBar.miniSideBarIsActive
     ? (document.body.style.overflow = 'hidden')
     : (document.body.style.overflow = 'auto');
 
   Categories.horizontalScrollBarIsHovering ||
   SideNavBar.isHoveringSideNavBar ||
-  VideosMain.videosIsLoading
+  VideosMain.videosIsLoading ||
+  SideNavBar.miniSideBarIsActive
     ? (document.body.style.marginRight = '0.8rem')
     : (document.body.style.marginRight = '0rem');
 

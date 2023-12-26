@@ -15,6 +15,7 @@ import {
 } from './features/VIDEOSMAIN/videosMainSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { videosArray } from './videosArray.jsx';
+import Sorry from './pages/Sorry.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -73,10 +74,20 @@ function App() {
           }
         />
         <Route
-          path="/Watch"
+          path="/watch"
           element={
             <HomePage>
               <Watch />
+            </HomePage>
+          }
+        />
+        <Route
+          path="/sorry"
+          element={
+            <HomePage>
+              <MainContentBox>
+                <Sorry />
+              </MainContentBox>
             </HomePage>
           }
         />

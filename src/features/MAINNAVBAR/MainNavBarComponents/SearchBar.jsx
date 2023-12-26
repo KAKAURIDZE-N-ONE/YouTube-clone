@@ -12,12 +12,14 @@ import {
   searchInputIsFocused,
   searchInputIsNotFocused,
 } from '../MainNavBarSlice.js';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
   const MainNavBar = useSelector(store => store.MainNavBar);
   const VideosMain = useSelector(store => store.VideosMain);
   const deleteColor = VideosMain.videosIsLoading;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isclickmoment, handleMouseDown, handleMouseUp } = useClickAnimation();
   const SearchInputEl = useRef(null);
   const SearchInputElBox = useRef(null);
@@ -58,6 +60,16 @@ function SearchBar() {
     [MainNavBar.windowWidth, MainNavBar.searchInputIsFocused, dispatch]
   );
 
+  function handleSearchSubmit(e) {
+    e.preventDefault();
+    navigate('/sorry');
+  }
+
+  function handleClickToOpenSearch() {
+    SearchInputElBox.current.classList.toggle('display-none');
+    handleFocusSearchInputEl();
+  }
+
   const StyleOfSearch = {
     borderBottomLeftRadius: MainNavBar.searchInputIsFocused && '0%',
     borderTopLeftRadius: MainNavBar.searchInputIsFocused && '0%',
@@ -76,11 +88,6 @@ function SearchBar() {
       '0.7rem',
   };
 
-  function handleClickToOpenSearch() {
-    SearchInputElBox.current.classList.toggle('display-none');
-    handleFocusSearchInputEl();
-  }
-
   return (
     <>
       <div
@@ -98,17 +105,19 @@ function SearchBar() {
               <SearchLoopSvg size="2rem" />
             </div>
           )}
-          <input
-            placeholder="Search"
-            type="search"
-            value={MainNavBar.searchText}
-            className={styles['search-input']}
-            onChange={handleChange}
-            onFocus={handlefocus}
-            onBlur={handleBlur}
-            ref={SearchInputEl}
-            style={{ ...StyleOfSearch }}
-          />
+          <form onSubmit={handleSearchSubmit}>
+            <input
+              placeholder="Search"
+              type="search"
+              value={MainNavBar.searchText}
+              className={styles['search-input']}
+              onChange={handleChange}
+              onFocus={handlefocus}
+              onBlur={handleBlur}
+              ref={SearchInputEl}
+              style={{ ...StyleOfSearch }}
+            />
+          </form>
           {MainNavBar.searchText && (
             <div className={styles['ion-icon-box']} onClick={handleclickonX}>
               <ion-icon
@@ -122,6 +131,7 @@ function SearchBar() {
 
       <div
         className={styles['search-loop']}
+        onClick={handleSearchSubmit}
         style={
           MainNavBar.needClickForSearch && MainNavBar.searchInputIsFocused
             ? {

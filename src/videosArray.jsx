@@ -2,7 +2,7 @@ export const videosArray = [
   [
     {
       videoImg:
-        'https://i.ytimg.com/vi/xFN8NPL2Xpw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAE1Cy3TpMZnKdQA7B0rGnxySa2OQ',
+        'https://i.ytimg.com/vi/uYPbbksJxIg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2M_LSAVX5C1yeaypLoWxlz78y5Q',
       pageImg:
         'https://yt3.ggpht.com/QSCDnr5KmYElRp-zYpdW-txkiRo-HYF6Ah1SvMF_7MlspmO1fwYOy7P1jnim8HqezI8IZZKcPQ=s88-c-k-c0x00ffffff-no-rj',
       videoUrl: '/src/features/VIDEOSMAIN/videos/video12.mp4',
@@ -48,7 +48,7 @@ export const videosArray = [
         'https://i.ytimg.com/vi/JFr0FA7ehfA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2SqeCE589Spi5RcGxVIcGN2HoIQ',
 
       pageImg:
-        'https://yt3.ggpht.com/ytc/APkrFKYxWqC-dqZDHtLAhrwjhpwlIIs79dnNg1h6gbfdBg=s68-c-k-c0x00ffffff-no-rj',
+        'https://yt3.googleusercontent.com/ytc/AIf8zZR5j88xw3BvPeEPQAQpfzw7oHfYe12_Bifn9KO9Mg=s176-c-k-c0x00ffffff-no-rj-mo',
       videoUrl: '/src/features/VIDEOSMAIN/videos/video5.mp4',
       videoName: 'სუფრა კახეთში Ft @Octopusi',
       pageName: 'საეჭვო კაცი',
@@ -77,7 +77,7 @@ export const videosArray = [
       videoImg:
         'https://i.ytimg.com/vi/5qm8PH4xAss/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASuyULMeWqQRoK_EfTLw4rAIlMKw',
       pageImg:
-        'https://yt3.ggpht.com/ytc/APkrFKZy-QRhSq-CCg77oQfSUQV8Nxe40XlH9Eb6J2LsgmI=s88-c-k-c0x00ffffff-no-rj',
+        'https://yt3.ggpht.com/ytc/AIf8zZRpTBCU44Os8Gstnt-Ak8YFA4RVWdaKUvRjo5G9mD8=s88-c-k-c0x00ffffff-no-rj',
       videoUrl: '/src/features/VIDEOSMAIN/videos/video7.mp4',
 
       videoName: '50 Cent - In Da Club (Official Music Video)',

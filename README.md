@@ -1,3 +1,3 @@
 # React + Vite
-Website link -->  kakauridze.netlify.app
+Website link -->  [kakauridze.netlify.app](https://kakauridze.netlify.app/)
 

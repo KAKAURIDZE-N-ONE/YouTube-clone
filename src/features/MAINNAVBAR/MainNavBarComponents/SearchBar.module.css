@@ -58,13 +58,13 @@
   color: #ffffff;
 }
 
-ion-icon[name='close-outline'] {
+ion-icon[name="close-outline"] {
   color: #fff;
   font-size: 4.2rem;
   --ionicon-stroke-width: 16px;
 }
 
-ion-icon[name='mic'] {
+ion-icon[name="mic"] {
   color: #fff;
   font-size: 2.25rem;
 }
@@ -141,6 +141,7 @@ ion-icon[name='mic'] {
   }
 
   .mic-box {
+    display: none;
     margin-left: 0;
     background-color: #0f0f0f;
   }

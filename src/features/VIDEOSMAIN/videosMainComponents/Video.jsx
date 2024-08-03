@@ -1,33 +1,33 @@
-import PropTypes from 'prop-types';
-import styles from './Video.module.css';
-import { memo, useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useCalculateGridTemplateColumnsVideosBox } from '../../../hooks/useCalculateGridTemplateColumnsVideosBox';
+import PropTypes from "prop-types";
+import styles from "./Video.module.css";
+import { memo, useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useCalculateGridTemplateColumnsVideosBox } from "../../../hooks/useCalculateGridTemplateColumnsVideosBox";
 import {
   pageImagesIsLoaded,
   updateVideoAndPhotoContainerHeight,
   updateVideoAndPhotoContainerWidth,
-} from '../videosMainSlice';
-import VoiceButtonBox from './VoiceButtonBox';
-import LineBetweenVoiceAndSubtitles from './LineBetweenVoiceAndSubtitles';
-import SubtitlesButtonBox from './SubtitlesButtonBox';
-import SettingDotsForVideo from './SettingDotsForVideos';
-import CurrentAndDurationTime from './CurrentAndDurationTime';
-import DurationOnThePhoto from './DurationOnThePhoto';
-import { Link } from 'react-router-dom';
+} from "../videosMainSlice";
+import VoiceButtonBox from "./VoiceButtonBox";
+import LineBetweenVoiceAndSubtitles from "./LineBetweenVoiceAndSubtitles";
+import SubtitlesButtonBox from "./SubtitlesButtonBox";
+import SettingDotsForVideo from "./SettingDotsForVideos";
+import CurrentAndDurationTime from "./CurrentAndDurationTime";
+import DurationOnThePhoto from "./DurationOnThePhoto";
+import { Link, useNavigate } from "react-router-dom";
 
-import video1 from '../videos/video1.mp4';
-import video2 from '../videos/video2.mp4';
-import video3 from '../videos/video3.mp4';
-import video4 from '../videos/video4.mp4';
-import video5 from '../videos/video5.mp4';
-import video6 from '../videos/video6.mp4';
-import video7 from '../videos/video7.mp4';
-import video8 from '../videos/video8.mp4';
-import video9 from '../videos/video9.mp4';
-import video10 from '../videos/video10.mp4';
-import video11 from '../videos/video11.mp4';
-import video12 from '../videos/video12.mp4';
+import video1 from "../videos/video1.mp4";
+import video2 from "../videos/video2.mp4";
+import video3 from "../videos/video3.mp4";
+import video4 from "../videos/video4.mp4";
+import video5 from "../videos/video5.mp4";
+import video6 from "../videos/video6.mp4";
+import video7 from "../videos/video7.mp4";
+import video8 from "../videos/video8.mp4";
+import video9 from "../videos/video9.mp4";
+import video10 from "../videos/video10.mp4";
+import video11 from "../videos/video11.mp4";
+import video12 from "../videos/video12.mp4";
 
 const videosArr = [
   video1,
@@ -46,8 +46,8 @@ const videosArr = [
 
 const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const dispatch = useDispatch();
-  const MainNavBar = useSelector(store => store.MainNavBar);
-  const VideosMain = useSelector(store => store.VideosMain);
+  const MainNavBar = useSelector((store) => store.MainNavBar);
+  const VideosMain = useSelector((store) => store.VideosMain);
 
   const [hoveredPercentage, setHoveredPercentage] = useState(0); // State to track hovered percentage
   const [duration, setDuration] = useState(0);
@@ -63,6 +63,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
 
   const videoAndPhotoContainerRef = useRef(null);
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   const gridTemplateCols = useCalculateGridTemplateColumnsVideosBox();
 
@@ -75,11 +76,11 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
         setVideoDistanceFromBottom(distanceFromBottom);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call initially to set the distance on load
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -100,10 +101,10 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
       }
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [MainNavBar.windowWidth, gridTemplateCols, dispatch]);
   ///to read width of photo and video container after page has arrive
@@ -118,7 +119,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     const timeout = setTimeout(playVideo, 1);
 
     return () => clearTimeout(timeout);
-  }, [videoBoxIsHovering, readyToChange]);
+  }, [videoBoxIsHovering, readyToChange, playVideox]);
 
   useEffect(() => {
     if (!videoBoxIsHovering) setReadyToChange(false);
@@ -150,7 +151,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
     setVideoImageIsLoaded(true);
   }
 
-  const onSliderChange = e => {
+  const onSliderChange = (e) => {
     const time = parseFloat(e.target.value);
     setCurrentTime(time);
     videoRef.current.currentTime = time;
@@ -225,44 +226,44 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
   const VIDEOIMGSTYLE = {};
 
   const CONTENTELEMENTBOXSTYLE = {
-    zIndex: '0',
-    backgroundColor: '#0f0f0f',
-    maxWidth: MainNavBar.windowWidth <= 700 && '50rem',
-    textDecoration: 'none',
+    zIndex: "0",
+    backgroundColor: "#0f0f0f",
+    maxWidth: MainNavBar.windowWidth <= 700 && "50rem",
+    textDecoration: "none",
   };
 
   const VIDEOANDPHOTOCONTAINERSTYLE = {
-    width: '100%',
+    width: "100%",
     height: `${VideosMain.videoAndPhotoContainerWidth / 1.77782}px`,
-    position: 'relative',
-    borderRadius: videoBoxIsHovering ? '0' : '12px',
-    transition: videoBoxIsHovering && 'border-radius 0.15s',
-    overflow: !readyToChange && 'hidden',
-    backgroundColor: !videoImageIsLoaded && 'rgba(255,255,255,0.2)',
+    position: "relative",
+    borderRadius: videoBoxIsHovering ? "0" : "12px",
+    transition: videoBoxIsHovering && "border-radius 0.15s",
+    overflow: !readyToChange && "hidden",
+    backgroundColor: !videoImageIsLoaded && "rgba(255,255,255,0.2)",
   };
 
   const watchedPercentage = (currentTime / duration) * 100;
 
   const INPUTRANGESTYLE = {
     background: `linear-gradient(to right, red ${watchedPercentage}%, white ${hoveredPercentage}px, #dddddd3b ${hoveredPercentage}px)`,
-    bottom: '0.23rem',
-    zIndex: videoBoxIsHovering && readyToChange ? '13' : '-2',
+    bottom: "0.23rem",
+    zIndex: videoBoxIsHovering && readyToChange ? "13" : "-2",
   };
 
   const IMGFULLCONTAINERSTYLE = {
-    zIndex: videoBoxIsHovering && readyToChange ? '-2' : '14',
-    position: 'absolute',
+    zIndex: videoBoxIsHovering && readyToChange ? "-2" : "14",
+    position: "absolute",
   };
 
   const VIDEOFULLCONTAINERSTYLE = {
-    zIndex: !(videoBoxIsHovering || (readyToChange ? '-2' : '12')),
-    position: 'absolute',
+    zIndex: !(videoBoxIsHovering || (readyToChange ? "-2" : "12")),
+    position: "absolute",
   };
 
   return (
     <Link
-      onClick={e => {
-        if (e.target.classList.value !== 'video') e.preventDefault();
+      onClick={(e) => {
+        if (e.target.classList.value !== "video") e.preventDefault();
       }}
       to={`/watch?v=${elementDetails.id}`}
       className={styles.contentElementBox}
@@ -308,16 +309,23 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
               className="video"
               ref={videoRef}
               src={videosArr[elementDetails.id]}
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               onTimeUpdate={onTimeUpdate}
               onLoadedMetadata={onLoadedMetadata}
               onLoadedData={handleVideoLoad}
               loop
-              muted={isMuted ? true : false}
+              playsInline
+              muted={true}
             />
           </div>
         )}
-        <div style={IMGFULLCONTAINERSTYLE}>
+        <div
+          onClick={() => {
+            navigate(`/watch?v=${elementDetails.id}`);
+            // console.log("click");
+          }}
+          style={IMGFULLCONTAINERSTYLE}
+        >
           <DurationOnThePhoto
             durationOfVideo={elementDetails.duration}
             videoBoxIsHovering={videoBoxIsHovering}
@@ -327,7 +335,7 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
               onLoad={handleVideoImageLoad}
               id="ImageId"
               className={styles.videoImg}
-              src={videoDistanceFromBottom > 0 ? elementDetails.videoImg : ''}
+              src={videoDistanceFromBottom > 0 ? elementDetails.videoImg : ""}
               alt="video image"
               style={VIDEOIMGSTYLE}
             />
@@ -341,14 +349,14 @@ const Video = memo(function Video({ elementDetails, isMuted, setIsMuted }) {
             boxShadow:
               photoAndVideoBoxIsHovering &&
               readyToChange &&
-              '10px -60px 10px 20px rgba(0, 0, 0, 0.214)',
+              "10px -60px 10px 20px rgba(0, 0, 0, 0.214)",
           }}
         >
           <div
             className={styles.pageImgBox}
             style={{
               backgroundColor:
-                !VideosMain.pageImagesIsLoaded && 'rgba(255,255,255,0.2)',
+                !VideosMain.pageImagesIsLoaded && "rgba(255,255,255,0.2)",
             }}
           >
             <img
